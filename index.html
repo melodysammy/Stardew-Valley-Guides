@@ -1,0 +1,380 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <title>Stardew Valley Guides</title>
+
+  <!-- All styling elements used on this webpage -->
+  <style>
+    html {
+        font-size: 100%;
+    }
+
+    html, body {
+        font-family: sans-serif;
+    }
+
+    label {
+        margin: 20px;
+    }
+
+    select {
+        margin-top: 20px;
+    }
+
+    table {
+        margin: 10px;
+        position: relative;
+        display: table;
+        border-collapse: separate;
+        box-sizing: border-box;
+        text-indent: initial;
+        border-spacing: 2px;
+        border-color: grey;
+    }
+
+    th {
+        display: table-cell;
+        vertical-align: inherit;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+    }
+
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+
+    td {
+        padding: 5px;
+    }
+
+    .picture {
+        text-align: center;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script>
+        
+    function filterTable() {
+
+      $("#locationSelection").on('click', function() {
+        var locations = $(this).val();
+        console.log(locations);
+
+        if (locations.includes("AllLocations")) {
+          $(".Ocean").show();
+          $(".RiverTown").show();
+          $(".RiverForest").show();
+          $(".PondForest").show();
+          $(".GingerIsland").show();
+          $(".MountainLake").show();
+          $(".SecretWoods").show();
+          $(".Sewers").show();
+          $(".WitchSwamp").show();
+          $(".Desert").show();
+        }
+
+        if (locations.includes("Ocean")) {
+            $(".Ocean").show();
+          } else {
+            $(".Ocean").each(function() {
+              $(this).hide();
+            });
+        }
+      });
+        // var locationInput, seasonInput, selected, table, tr, tdLocation, tdSeason, i;
+        // table = document.getElementById("fish");
+        // tr = table.getElementsByTagName("tr");
+        // locationInput = document.getElementById('locationSelection');
+        // seasonInput = document.getElementById('seasonSelection');
+        // selected = [];
+
+        // for (i = 0; i < locationInput.options.length; i++) {
+        //     if (locationInput[i].selected) {
+        //         selected.push(locationInput[i].value.toString());
+        //     }
+        // }
+
+        // for (i = 0; i < seasonInput.options.length; i++) {
+        //     if (seasonInput[i].selected) {
+        //         selected.push(seasonInput[i].value.toString());
+        //     }
+        // }
+
+        // for (i = 0; i < tr.length; i++) {
+        //     tdLocation = tr[i].getElementsByTagName("td")[2];
+        //     tdSeason = tr[i].getElementsByTagName("td")[4];
+
+        //     if (tdLocation) {
+        //         if (selected.includes("AllLocations")) {
+        //             tr[i].style.display = "";
+        //         } else {
+        //             if (selected.includes("Ocean") && tdLocation.innerHTML.includes("Ocean")) {
+        //                 tr[i].style.display = "";
+        //             } else if (selected.includes("MountainLake") && tdLocation.innerHTML.toString().includes("Mountain Lake")) {
+        //                 tr[i].style.display = "";
+        //             } else if (selected.includes("RiverTown") && tdLocation.innerHTML.toString().includes("(Town")) {
+        //                 tr[i].style.display = "";
+        //             } else if (selected.includes("RiverForest") && tdLocation.innerHTML.toString().includes("Forest)") && tdLocation.innerHTML.toString().includes("River")) {
+        //                 tr[i].style.display = "";
+        //             } else if (selected.includes("PondForest") && tdLocation.innerHTML.toString().includes("Forest Pond")) {
+        //                 tr[i].style.display = "";
+        //             } else if (selected.includes("SecretWoods") && tdLocation.innerHTML.toString().includes("Secret Woods")) {
+        //                 tr[i].style.display = "";
+        //             } else if (selected.includes("Sewers") && tdLocation.innerHTML.toString().includes("Sewers")) {
+        //                 tr[i].style.display = "";
+        //             } else if (selected.includes("Desert") && tdLocation.innerHTML.toString().includes("Desert")) {
+        //                 tr[i].style.display = "";
+        //             } else if (selected.includes("WitchSwamp") && tdLocation.innerHTML.toString().includes("Witch's Swamp")) {
+        //                 tr[i].style.display = "";
+        //             } else {
+        //                 tr[i].style.display = "none";
+        //             }
+        //         }
+        //     }
+
+        //     if (tdSeason && selected.length > 0) {
+        //         if (tr[i].style.display === "" || locationInput.options.length > 0) {
+        //             if (selected.includes("AllSeasons") || tdSeason.innerHTML.includes("All Seasons")) {
+        //                 tr[i].style.display = "";
+        //             } else {
+        //                 if (selected.includes("Spring") && tdSeason.innerHTML.includes("Spring")) {
+        //                     tr[i].style.display = "";
+        //                 } else if (selected.includes("Summer") && tdSeason.innerHTML.toString().includes("Summer")) {
+        //                     tr[i].style.display = "";
+        //                 } else if (selected.includes("Fall") && tdSeason.innerHTML.toString().includes("Fall")) {
+        //                     tr[i].style.display = "";
+        //                 } else if (selected.includes("Winter") && tdSeason.innerHTML.toString().includes("Winter")) {
+        //                     tr[i].style.display = "";
+        //                 } else {
+        //                     tr[i].style.display = "none";
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+    }
+      
+  </script>
+
+</head>
+
+<body>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <label for="locationSelection">Filter by Location:</label>
+    <select name="locationSelection" id="locationSelection" onchange="filterTable()" multiple>
+        <option value="AllLocations">All</option>
+        <option value="Ocean">Ocean</option>
+        <option value="RiverTown">River Town</option>
+        <option value="RiverForest">River Forest</option>
+        <option value="PondForest">Forest Pond</option>
+        <option value="MountainLake">Mountain Lake</option>
+        <option value="SecretWoods">Secret Woods</option>
+        <option value="Sewers">The Sewers</option>
+        <option value="Desert">The Desert</option>
+        <option value="WitchSwamp">Witch's Swamp</option>
+    </select>
+
+    <label for="seasonSelection">Filter by Season:</label>
+    <select name="seasonSelection" id="seasonSelection" onchange="filterTable()" multiple>
+        <option value="AllSeasons">All</option>
+        <option value="Spring">Spring</option>
+        <option value="Summer">Summer</option>
+        <option value="Fall">Fall</option>
+        <option value="Winter">Winter</option>
+    </select>
+  
+  <table id="fish">
+      <th>Image</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Time</th>
+      <th>Season</th>
+      <th>Weather</th>
+      <th>Used In</th>
+      <tbody>
+          <tr class="Ocean GingerIsland">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/b/ba/Pufferfish.png'></td>
+            <td>Pufferfish</td>
+            <td>Ocean <br/> Ginger Island oceans</td>
+            <td>12pm - 4pm</td>
+            <td>Summer <br/> All seasons on Ginger Island</td>
+            <td>Sun</td>
+            <td>Specialty Fish Bundle <br/> Abigail (loved gift) <br/> Aquatic Research Quest</td>
+          </tr>
+          <tr class="Ocean">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/7/79/Anchovy.png'></td>
+            <td>Anchovy</td>
+            <td>Ocean</td>
+            <td>Anytime</td>
+            <td>Spring <br/> Fall</td>
+            <td>Any</td>
+            <td></td>
+          </tr>
+          <tr class="Ocean GingerIsland">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/c/c5/Tuna.png'></td>
+            <td>Tuna</td>
+            <td>Ocean <br/> Giner Island oceans</td>
+            <td>6am - 7pm</td>
+            <td>Summer <br/> Winter <br/> All seasons on Ginger Island</td>
+            <td>Any</td>
+            <td>Ocean Fish Bundle <br/> Quality Fish Bundle <br/> Fish Taco</td>
+          </tr>
+          <tr class="Ocean">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/0/04/Sardine.png'></td>
+            <td>Sardine</td>
+            <td>Ocean</td>
+            <td>6am - 7pm</td>
+            <td>Spring <br/> Fall <br/> Winter</td>
+            <td>Any</td>
+            <td>Ocean Fish Bundle <br/> Dish O' The Sea</td>
+          </tr>
+          <tr class="RiverTown RiverForest">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/8/82/Bream.png'></td>
+            <td>Bream</td>
+            <td>River (Town+Forest)</td>
+            <td>6pm - 2am</td>
+            <td>All Seasons</td>
+            <td>Any</td>
+            <td>Night Fish Bundle <br/> Baked Fish</td>
+          </tr>
+          <tr class="MountainLake">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/1/11/Largemouth_Bass.png'></td>
+            <td>Largemouth Bass</td>
+            <td>Mountain Lake</td>
+            <td>6am - 7pm</td>
+            <td>All Seasons</td>
+            <td>Any</td>
+            <td>Lake Fish Bundle <br/> Quality Fish Bundle <br/> Crispy Bass <br/> Fish Casserole Quest</td>
+          </tr>
+          <tr class="RiverTown PondForest">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/a/a5/Smallmouth_Bass.png'></td>
+            <td>Smallmouth Bass</td>
+            <td>River (Town) <br/> Forest Pond</td>
+            <td>Anytime</td>
+            <td>Spring <br/> Fall</td>
+            <td>Any</td>
+            <td></td>
+          </tr class="RiverTown RiverForest MountainLake">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/1/14/Rainbow_Trout.png'></td>
+            <td>Rainbow Trout</td>
+            <td>River (Town+Forest) <br/> Mountain Lake</td>
+            <td>6am - 7pm</td>
+            <td>Summer</td>
+            <td>Sun</td>
+            <td>Trout Soup</td>
+          </tr>
+          <tr class="RiverTown RiverForest">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/e/e0/Salmon.png'></td>
+            <td>Salmon</td>
+            <td>River (Town+Forest)</td>
+            <td>6am - 7pam</td>
+            <td>Fall</td>
+            <td>Any</td>
+            <td>Salmon Dinner</td>
+          </tr>
+          <tr class="RiverTown RiverForest PondForest MountainLake">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/0/05/Walleye.png'></td>
+            <td>Walleye</td>
+            <td>River (Town+Forest) <br/> Forest Pond <br/> Mountain Lake</td>
+            <td>12pm - 2am</td>
+            <td>Fall <br/> Winter with Rain Totem</td>
+            <td>Rain</td>
+            <td>Night Fish Bundle <br/> Quality Fish Bundle</td>
+          </tr>
+          <tr class="RiverTown RiverForest PondForest MountainLake">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/4/43/Perch.png'></td>
+            <td>Perch</td>
+            <td>River (Town+Forest) <br/> Forest Pond <br/> Mountain Lake</td>
+            <td>Anytime</td>
+            <td>Winter</td>
+            <td>Any</td>
+            <td></td>
+          </tr>
+          <tr class="MountainLake SecretWoods Sewers">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/a/a8/Carp.png'></td>
+            <td>Carp</td>
+            <td>Mountain Lake <br/> Secret Woods <br/> The Sewers</td>
+            <td>Anytime</td>
+            <td>All Seasons</td>
+            <td>Any</td>
+            <td>Lake Fish Bundle <br/> Carp Surprise</td>
+          </tr>
+          <tr class="RiverTown RiverForest SecretWoods WitchSwamp">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/9/99/Catfish.png'></td>
+            <td>Catfish</td>
+            <td>River (Town+Forest) <br/> Secret Woods <br/> Witch's Swamp</td>
+            <td>6am - 12am</td>
+            <td>Spring <br/> Fall <br/> Spring & Summer (Secret Woods only)</td>
+            <td>Rain</td>
+            <td>River Fish Bundle <br/> Willy (loved gift)</td>
+          </tr>
+          <tr class="RiverForest RiverTown PondForest">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/3/31/Pike.png'></td>
+            <td>Pike</td>
+            <td>River (Town+Forest) <br/> Forest Pond</td>
+            <td>Anytime</td>
+            <td>Summer <br/> Winter</td>
+            <td>Any</td>
+            <td></td>
+          </tr>
+          <tr class="RiverTown RiverForest">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/5/56/Sunfish.png'></td>
+            <td>Sunfish</td>
+            <td>River (Town+Forest)</td>
+            <td>6am - 7pm</td>
+            <td>Spring <br/> Summer</td>
+            <td>Sun <br/> Wind</td>
+            <td>River Fish Bundle <br/> Baked Fish</td>
+          </tr>
+          <tr class="Ocean">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/f/f2/Red_Mullet.png'></td>
+            <td>Red Mullet</td>
+            <td>Ocean</td>
+            <td>6am - 7pm</td>
+            <td>Summer <br/> Winter</td>
+            <td>Any</td>
+            <td></td>
+          </tr>
+          <tr class="Ocean">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/f/f1/Herring.png'></td>
+            <td>Herring</td>
+            <td>Ocean</td>
+            <td>Anytime</td>
+            <td>Spring <br/> Winter</td>
+            <td>Any</td>
+            <td></td>
+          </tr>
+          <tr class="Ocean">
+            <td class="picture"><img src='https://stardewvalleywiki.com/mediawiki/images/9/91/Eel.png'></td>
+            <td>Eel</td>
+            <td>Ocean</td>
+            <td>4pm - 2am</td>
+            <td>Spring <br/> Fall</td>
+            <td>Rain</td>
+            <td>Night Fishing Bundle <br/> Fried Eel <br/> Spicy Eel</td>
+          </tr>
+          
+      </tbody>
+  </table>
+  
+</body>
+
+</html>
